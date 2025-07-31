@@ -1,7 +1,12 @@
 import { PageLayout } from '@/layout';
+import { PluginWrapper } from '@/plugins';
 
 function App() {
-  return <PageLayout />;
+  return (
+    <PluginWrapper>
+      <PageLayout />
+    </PluginWrapper>
+  );
 }
 
 export default App;
