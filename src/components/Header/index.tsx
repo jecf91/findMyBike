@@ -1,17 +1,22 @@
-import { AppBar, type AppBarProps } from '@mui/material';
-import { DRAWER_WIDTH } from '@/constants';
+import { Box, type BoxProps, Typography } from '@mui/material';
 
-interface HeaderProps extends AppBarProps {}
+interface HeaderProps extends BoxProps {}
 
-export const Header = ({ children, ...props }: HeaderProps) => {
+export const Header = ({ ...props }: HeaderProps) => {
   return (
-    <AppBar
+    <Box
       component="header"
-      position="fixed"
-      sx={{ width: `calc(100% - ${DRAWER_WIDTH}px)`, ml: `${DRAWER_WIDTH}px` }}
+      sx={{
+        bgcolor: 'primary.main',
+        color: 'primary.contrastText',
+        height: '50px',
+        display: 'flex',
+        alignItems: 'center',
+        padding: '0 20px',
+      }}
       {...props}
     >
-      {children}
-    </AppBar>
+      <Typography>FindMyBike</Typography>
+    </Box>
   );
 };

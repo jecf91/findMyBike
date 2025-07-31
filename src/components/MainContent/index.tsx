@@ -6,7 +6,7 @@ interface MainContentProps {
 
 export const MainContent = ({ children }: MainContentProps) => {
   return (
-    <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+    <Box component="main" sx={{ flexGrow: 1 }}>
       {children}
     </Box>
   );
