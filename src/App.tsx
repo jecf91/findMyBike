@@ -1,5 +1,7 @@
+import { PageLayout } from '@/layout';
+
 function App() {
-  return <h1>hello world</h1>;
+  return <PageLayout />;
 }
 
 export default App;
