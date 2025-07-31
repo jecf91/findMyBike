@@ -1,5 +1,6 @@
 import { Box, CssBaseline } from '@mui/material';
 import { Header, Navbar, MainContent } from '@/components';
+import { Home } from '@/pages';
 
 export const PageLayout = () => {
   return (
@@ -7,7 +8,7 @@ export const PageLayout = () => {
       <Navbar>Nav</Navbar>
       <MainContent>
         <Header>Header</Header>
-        <h1>Main content</h1>
+        <Home />
       </MainContent>
       <CssBaseline />
     </Box>
