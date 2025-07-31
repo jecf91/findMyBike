@@ -1,10 +1,10 @@
-import { PageLayout } from '@/layout';
+import { AppLayout } from '@/layout';
 import { PluginWrapper } from '@/plugins';
 
 function App() {
   return (
     <PluginWrapper>
-      <PageLayout />
+      <AppLayout />
     </PluginWrapper>
   );
 }

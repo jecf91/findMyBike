@@ -1,26 +1,20 @@
+import { bikesAdapter } from '@/adapters';
 import { useGetBikes } from '@/controllers';
-import { CircularProgress } from '@mui/material';
+import { useMemo } from 'react';
+import { LoadingState } from './LoadingState';
+import { EmptyState } from './EmptyState';
+import { BikesTable } from './components/BikesTable';
 
 export const Home = () => {
   const { isLoading, data } = useGetBikes();
 
-  console.log(data);
+  const rows = useMemo(() => {
+    return data ? bikesAdapter(data) : [];
+  }, [data]);
 
-  if (isLoading) {
-    return <CircularProgress />;
-  }
+  if (isLoading) <LoadingState />;
 
-  if (!data?.length) {
-    return (
-      <div>
-        <p>No data available</p>
-      </div>
-    );
-  }
+  if (!data?.length) <EmptyState />;
 
-  return (
-    <div>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
-  );
+  return <BikesTable rows={rows} />;
 };

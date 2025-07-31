@@ -1,16 +1,22 @@
-import { Box, CssBaseline } from '@mui/material';
-import { Header, Navbar, MainContent } from '@/components';
-import { Home } from '@/pages';
+import { Box, Typography } from '@mui/material';
 
-export const PageLayout = () => {
+interface PageLayoutProps {
+  pageTitle: string;
+  children: React.ReactNode;
+}
+
+export const PageLayout = ({ pageTitle, children }: PageLayoutProps) => {
   return (
-    <Box sx={{ display: 'flex' }}>
-      <Navbar>Nav</Navbar>
-      <MainContent>
-        <Header>Header</Header>
-        <Home />
-      </MainContent>
-      <CssBaseline />
+    <Box
+      sx={{
+        padding: '20px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '20px',
+      }}
+    >
+      <Typography variant="h3">{pageTitle}</Typography>
+      <Box>{children}</Box>
     </Box>
   );
 };
