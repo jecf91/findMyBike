@@ -6,6 +6,7 @@ export interface BikeRow {
   model: string;
   manufacturer: string;
   frameModel: string | null;
+  id: number;
 }
 
 export const bikesAdapter = (bikes: Bike[]): BikeRow[] =>
@@ -15,4 +16,5 @@ export const bikesAdapter = (bikes: Bike[]): BikeRow[] =>
     model: bike.title,
     manufacturer: bike.manufacturer_name,
     frameModel: bike.frame_model,
+    id: bike.id,
   }));

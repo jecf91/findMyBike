@@ -4,4 +4,5 @@ export const TABLE_HEADERS = [
   'Model',
   'Manufacturer Name',
   'Frame Model',
+  '',
 ];
