@@ -1,11 +1,11 @@
 import { Box, Typography } from '@mui/material';
+import { Outlet } from 'react-router';
 
 interface PageLayoutProps {
   pageTitle: string;
-  children: React.ReactNode;
 }
 
-export const PageLayout = ({ pageTitle, children }: PageLayoutProps) => {
+export const PageLayout = ({ pageTitle }: PageLayoutProps) => {
   return (
     <Box
       sx={{
@@ -16,7 +16,9 @@ export const PageLayout = ({ pageTitle, children }: PageLayoutProps) => {
       }}
     >
       <Typography variant="h3">{pageTitle}</Typography>
-      <Box>{children}</Box>
+      <Box>
+        <Outlet />
+      </Box>
     </Box>
   );
 };

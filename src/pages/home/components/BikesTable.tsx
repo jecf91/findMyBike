@@ -30,7 +30,7 @@ export const BikesTable = ({ rows }: BikesTableProps) => {
           </TableHead>
           <TableBody>
             {rows?.map((bike) => (
-              <TableRowComponent bike={bike} key={bike.serial} />
+              <TableRowComponent bike={bike} key={bike.id} />
             ))}
           </TableBody>
         </Table>
