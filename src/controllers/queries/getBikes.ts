@@ -1,10 +1,10 @@
 import { apiInstance } from '@/services';
 import { type Bikes } from '@/models';
+import { BASE_QUERY_PARAMS } from '@/constants';
 
-const url =
-  'search?page=1&per_page=10&location=Berlin&distance=10&stolenness=proximity';
+export const getBikes = async (page: number = 1) => {
+  const url = `search?page=${page}&per_page=10&${BASE_QUERY_PARAMS}`;
 
-export const getBikes = async () => {
   const response = await apiInstance.get<Bikes>(url);
   return response.data.bikes;
 };
