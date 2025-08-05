@@ -30,6 +30,10 @@ export interface Bike {
   cycle_type_slug: CycleTypeSlug;
 }
 
+export interface BikeResponse {
+  bike: Bike;
+}
+
 export interface Bikes {
   bikes: Bike[];
 }
