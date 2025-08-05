@@ -3,9 +3,9 @@ import { getBike } from '@/controllers/queries';
 import { GET_BIKE } from '@/controllers/constants/queryKeys';
 
 export const useGetBike = (id: string) => {
-  const bikesQuery = useQuery({
+  const bikeQuery = useQuery({
     queryKey: [GET_BIKE, id],
     queryFn: () => getBike(id),
   });
-  return bikesQuery;
+  return bikeQuery;
 };
