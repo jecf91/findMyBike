@@ -2,10 +2,9 @@ import { bikesAdapter } from '@/adapters';
 import { useGetBikes, useGetSearchCount } from '@/controllers';
 import { useMemo } from 'react';
 import { LoadingState } from './LoadingState';
-import { EmptyState } from './EmptyState';
 import { BikesTable } from './components/BikesTable';
 import { usePagination } from '@/hooks';
-import { ErrorState } from './ErrorState';
+import { ErrorState, EmptyState } from '@/components';
 import { BikesPagination } from './components/BikesPagination';
 
 export const Home = () => {
@@ -40,7 +39,8 @@ export const Home = () => {
   if (hasError)
     return <ErrorState message="Failed to load bikes." onRetry={handleRetry} />;
 
-  if (!bikes?.length) return <EmptyState />;
+  if (!bikes?.length)
+    return <EmptyState message="There are no bikes to show." />;
 
   return (
     <>
