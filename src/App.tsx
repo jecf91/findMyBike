@@ -1,11 +1,14 @@
 import { AppLayout } from '@/layout';
 import { PluginWrapper } from '@/plugins';
+import ErrorBoundary from './ErrorBoundary';
 
 function App() {
   return (
-    <PluginWrapper>
-      <AppLayout />
-    </PluginWrapper>
+    <ErrorBoundary>
+      <PluginWrapper>
+        <AppLayout />
+      </PluginWrapper>
+    </ErrorBoundary>
   );
 }
 
