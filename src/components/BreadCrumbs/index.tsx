@@ -1,5 +1,3 @@
-// components/BreadcrumbsNav.tsx
-
 import {
   Breadcrumbs,
   Link,
