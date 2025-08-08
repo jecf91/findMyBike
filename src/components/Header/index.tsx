@@ -5,6 +5,7 @@ import {
   Typography,
   Link as MuiLink,
 } from '@mui/material';
+import { Link } from 'react-router';
 
 interface HeaderProps extends BoxProps {}
 
@@ -24,7 +25,20 @@ export const Header = ({ ...props }: HeaderProps) => {
       }}
       {...props}
     >
-      <Typography variant="h6" fontWeight={600}>
+      <Typography
+        component={Link}
+        to="/"
+        variant="h6"
+        fontWeight={600}
+        sx={{
+          color: 'primary.contrastText',
+          textDecoration: 'none',
+          cursor: 'pointer',
+          '&:hover': {
+            textDecoration: 'underline',
+          },
+        }}
+      >
         FindMyBike
       </Typography>
 

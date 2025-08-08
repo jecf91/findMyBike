@@ -11,29 +11,17 @@ export const LoadingState = () => {
       sx={{ margin: '20px 0' }}
     >
       {[...Array(4)].map((_, index) => (
-        <Grid size={1}>
+        <Grid size={1} key={index}>
           <InfoCard>
-            <Skeleton
-              key={index}
-              variant="rectangular"
-              height={20}
-              sx={{ mb: 0.8, borderRadius: 1 }}
-              animation="pulse"
-            />
-            <Skeleton
-              key={index}
-              variant="rectangular"
-              height={20}
-              sx={{ mb: 0.8, borderRadius: 1 }}
-              animation="pulse"
-            />
-            <Skeleton
-              key={index}
-              variant="rectangular"
-              height={20}
-              sx={{ mb: 0.8, borderRadius: 1 }}
-              animation="pulse"
-            />
+            {[...Array(3)].map((_, index) => (
+              <Skeleton
+                key={index}
+                variant="rectangular"
+                height={20}
+                sx={{ mb: 0.8, borderRadius: 1 }}
+                animation="pulse"
+              />
+            ))}
           </InfoCard>
         </Grid>
       ))}
