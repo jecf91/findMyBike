@@ -1,6 +1,6 @@
 import type { BikeRow } from '@/adapters';
 import { getFormattedDateWithTime } from '@/utils';
-import { TableCell, TableRow } from '@mui/material';
+import { TableCell, TableRow, Button } from '@mui/material';
 import { Link } from 'react-router';
 
 interface TableRowComponentProps {
@@ -22,7 +22,14 @@ export const TableRowComponent = ({ bike }: TableRowComponentProps) => {
       <TableCell>{manufacturer}</TableCell>
       <TableCell>{frameModel ?? '-'}</TableCell>
       <TableCell>
-        <Link to={`/bike/${id}`}>See Details</Link>
+        <Button
+          component={Link}
+          to={`/bike/${id}`}
+          variant="outlined"
+          size="small"
+        >
+          See Details
+        </Button>
       </TableCell>
     </TableRow>
   );

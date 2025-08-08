@@ -7,10 +7,19 @@ interface TitleProps {
 interface DescriptionProps {
   children: React.ReactNode;
 }
+interface ActionProps {
+  children: React.ReactNode;
+}
 
 const InfoCard = ({ children }: InfoCardProps) => {
   return (
-    <Card variant="outlined" sx={{ minWidth: 275, mb: 2 }}>
+    <Card
+      sx={{
+        height: '100%',
+        minHeight: '150px',
+        maxHeight: '200px',
+      }}
+    >
       <CardContent>{children}</CardContent>
     </Card>
   );
@@ -28,7 +37,12 @@ const Description = ({ children }: DescriptionProps) => {
   return <Typography variant="body2">{children}</Typography>;
 };
 
+const Action = ({ children }: ActionProps) => {
+  return <>{children}</>;
+};
+
 InfoCard.Title = Title;
 InfoCard.Description = Description;
+InfoCard.Action = Action;
 
 export default InfoCard;
