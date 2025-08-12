@@ -1,7 +1,7 @@
 import { PaginationComponent } from '@/components/Pagination';
 import { Box } from '@mui/material';
 import type { SearchCount } from '@/models';
-import type { PaginationHook } from '@/hooks';
+import type { PaginationHook } from '../hooks/usePagination';
 import { getTotalPages } from '@/utils';
 
 interface BikesPaginationProps extends PaginationHook {

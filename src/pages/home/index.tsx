@@ -3,7 +3,7 @@ import { useGetBikes, useGetSearchCount } from '@/controllers';
 import { useMemo } from 'react';
 import { LoadingState } from './LoadingState';
 import { BikesTable } from './components/BikesTable';
-import { usePagination } from '@/hooks';
+import { usePagination } from './hooks/usePagination';
 import { ErrorState, EmptyState } from '@/components';
 import { BikesPagination } from './components/BikesPagination';
 
